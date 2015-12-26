@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pizzeria</title>
+    <meta charset="utf-8"/>
+    <meta author="Joanna Wetesko"/>
+	
+    <script src="./bower_components/angular/angular.js"></script>
+</head>
+
+<body>
+    <h1>wow</h1>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "Angular mail client",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sebagradys/Project-JS",
+  "authors": [
+    "Seba Gradys <seba.gradys@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],    
+"dependencies": {
+    "angular": "~1.4.0",
+    "angular-ui-router": "~0.2.15"
+  }
+}
