@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="PizzeriaApp">
 <head>
+    <base href="/">
     <title>Pizzeria</title>
     <meta charset="utf-8"/>
     <meta author="Joanna Wetesko"/>
 	
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="public/pizzeriaApp.js"></script>
+
+    <script src="public/mainController.js"></script>
+    <script src="public/contactController.js"></script>
+    <script src="public/finalizeOrderController.js"></script>
+    <script src="public/orderStatusController.js"></script>
 </head>
 
 <body>
-    <h1>wow</h1>
-    
+    <nav>
+	<a ui-sref="main">Main page</a>
+	<a ui-sref="contact">Contact</a>
+	<a ui-sref="order">Finalize order</a>
+    </nav>
+    <div ui-view></div>    
 </body>
 </html>

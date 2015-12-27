@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="PizzeriaApp">
 <head>
     <title>Pizzeria</title>
     <meta charset="utf-8"/>
     <meta author="Joanna Wetesko"/>
 	
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 </head>
 
 <body>
-    <h1>wow</h1>
+    <nav>
+        <h1>Pizzeria</h1>
+        <a ui-sref="contact">Contact</a>
+    </nav>
+    <div ui-view></div>
     
 </body>
 </html>
