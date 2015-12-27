@@ -1,3 +1,0 @@
-<div id="contactPage" ng-controller="contactController">
-	<h1>Tutaj bedzie kontakt</h1>
-</div>
