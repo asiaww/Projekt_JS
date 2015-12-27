@@ -27,3 +27,20 @@ var app = angular.module('PizzeriaApp', ['ui.router']).config(function ($statePr
 app.config(["$locationProvider", function ($locationProvider) {
     $locationProvider.html5Mode(true);
 }]);
+
+app.service("dataFromServer", function($http) {
+    
+    return {
+                getContact: function() {
+                    return $http.get("/contact").then(function(res) {
+                        return res;
+                    });
+                },
+
+                getMenu: function() {
+                    return $http.get("/menu").then(function(res) {
+                        return res;
+                    });
+                }
+    };               
+});
