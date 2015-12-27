@@ -1,3 +1,0 @@
-<div id="finalizeOrderPage" ng-controller="finalizeOrderController">
-	<h1>Tutaj bedzie formularz zamowienia</h1> 
-</div>
