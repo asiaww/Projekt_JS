@@ -3,12 +3,23 @@
         <h1>Menu</h1>        
         <ul>
             <li ng-repeat = "position in menu">
-            {{position.name}}, {{position.ingredients}}, {{position.price}}
-            <button id=addPositionButton ng-click="">+</button>
+            <p>{{position.name}}</p>
+            <p>{{position.ingredients}}</p>
+            <p>{{position.price}}</p>
+            <input type="number" min="1" ng-model="position.count"/>
+            <button id="{{position.id}}" ng-click="addPizzaToOrder(position.name, position.count, position.price)">Add to basket</button>
+            <button ng-click="instantOrder()">Instant order</button>
         </ul>
     </div>
     <div id="basket">
         <h1>Basket</h1>
-        <p>Tutaj bedzie koszyk, ale na razie nic nie ma</p>
+        <ul>
+            <li ng-repeat = "position in order">
+            {{position.name}}, {{position.count}}, {{position.price}}
+            <button id="{{position.name}}" ng-click="removePizzaFromOrder(position)">-</button>
+            <button ng-click="">edit</button>
+        </ul>
+        Total: {{total}}
     </div>
+    <button ng-click=goToFinalizeOrder()>Continue</button>
 </div>

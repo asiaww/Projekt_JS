@@ -15,7 +15,10 @@ var app = angular.module('PizzeriaApp', ['ui.router']).config(function ($statePr
         .state('order', {
     	    url: "/order",
             templateUrl: "public/finalizeOrder.html",
-            controller: "finalizeOrderController"
+            controller: "finalizeOrderController",
+            params: {
+                order: null
+            }
         })
         .state('status', {
             url: "/status/:orderId",
