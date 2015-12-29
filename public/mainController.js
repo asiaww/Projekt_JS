@@ -2,6 +2,7 @@ app.controller("mainController", function($scope, $http, $state, dataFromServer)
 
     $scope.menu = [];
     $scope.order = [];
+    $scope.basket = [];
     $scope.total = 0;    
 
     $scope.getMenu = function() {
@@ -10,39 +11,66 @@ app.controller("mainController", function($scope, $http, $state, dataFromServer)
         });
     };
 
-    $scope.addPizzaToOrder = function(name, count, price) {
+    $scope.addPizzaToOrder = function(id, name, count, price) {
+        var flag = true;        
         if (count > 0) {
-            var orderPosition = {
-                name: name,            
-                count: count,
-                price: price  
-            };
-
-            $scope.order.push(orderPosition);
-            $scope.sumTotal();       
-        };
+	        $scope.basket.forEach(function(position) {            
+                if (position.name === name) {
+                    position.count = position.count + count;
+                    flag = false;
+                };
+            });
+            $scope.order.forEach(function(position) {
+                if (position.name === name) {
+                    position.quantity = position.quantity + count;
+                    flag = false;
+                };
+            });
+            if (flag) {	        
+                var basketPosition = {
+                    id: id,
+                    name: name,            
+                    count: count,
+                    price: price  
+                };
+                var orderPosition = {
+                    id: id,
+                    quantity: count,
+                };
+                $scope.basket.push(basketPosition);
+                $scope.order.push(orderPosition);
+            }             
+            $scope.sumTotal();
+        }
     };
 
     $scope.removePizzaFromOrder = function(position) {
-        var index = $scope.order.indexOf(position);
+        var index = $scope.basket.indexOf(position);
+        $scope.basket.splice(index, 1);
         $scope.order.splice(index, 1); 
         $scope.sumTotal();
     };
 
+    $scope.editCount = function() {
+        return true;
+    }
+
     $scope.sumTotal = function() {
         $scope.total = 0;    
-        $scope.order.forEach(function(position) {
+        $scope.basket.forEach(function(position) {
             $scope.total = $scope.total + (position.count * position.price);
         });
         $scope.total = $scope.total.toFixed(2);
     };
 
     $scope.goToFinalizeOrder = function() {
-        $state.go("order", { order: $scope.order });
+        $state.go("order", { order: $scope.order, basket: $scope.basket, total: $scope.total });
     };
 
     $scope.instantOrder = function() {
-        $scope.addPizzaToOrder(this.position.name, 1, this.position.price);    
+        $scope.order = [];
+        $scope.basket = [];
+        $scope.addPizzaToOrder(this.position.id, this.position.name, 1, this.position.price);    
         $scope.goToFinalizeOrder();
     }
     

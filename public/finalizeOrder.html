@@ -1,3 +1,29 @@
 <div id="finalizeOrderPage" ng-controller="finalizeOrderController">
-	<h1>Tutaj bedzie formularz zamowienia</h1> 
+    <div id="form">
+        <form name="orderForm" novalidate>
+            <p>
+                <input type="text" name="phone" ng-model="form.phone" ng-change="phoneNumberValidation()" placeholder="Phone number" required>
+                <div ng-show="orderForm.phone.$invalid || !validOrder" class="bubble">Phone number is invalid!</div>
+            </p>
+            
+            <p>
+                <input type="text" name="street" ng-model="form.street" placeholder="Street name" required>
+                <div ng-show="orderForm.street.$invalid" class="bubble">Street name is required!</div>
+            </p>
+
+            <p>
+                <textarea name="remarks" ng-model="form.remarks" placeholder="Remarks"></textarea>
+            </p>
+        </form>
+    </div>
+    <div id="basketReadOnly">
+        <h1>Basket</h1>        
+        <ul>
+            <li ng-repeat = "position in basket">
+            {{position.name}}, {{position.count}}, {{position.price}}
+        </ul>
+        Total: {{total}}
+    </div>
+    <button id="backButton" ng-click=goToMain()>Back</button> <button id="orderButton" ng-disabled="form.$invalid || !validOrder" ng-click="postOrder()">Order</button>
+    <div ng-show="postFailed" class="bubble">Ooops! Something went wrong! Your order is invalid!</div>
 </div>

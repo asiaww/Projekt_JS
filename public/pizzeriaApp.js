@@ -17,19 +17,21 @@ var app = angular.module('PizzeriaApp', ['ui.router']).config(function ($statePr
             templateUrl: "public/finalizeOrder.html",
             controller: "finalizeOrderController",
             params: {
-                order: null
+                order: null,
+                basket: null,
+                total: 0
             }
         })
         .state('status', {
-            url: "/status/:orderId",
+            url: "/order/:orderid",
             templateUrl: "public/orderStatus.html",
             controller: "orderStatusController"
         });
 });
 
-app.config(["$locationProvider", function ($locationProvider) {
-    $locationProvider.html5Mode(true);
-}]);
+//app.config(["$locationProvider", function ($locationProvider) {
+//    $locationProvider.html5Mode(true);
+//}]);
 
 app.service("dataFromServer", function($http) {
     
@@ -42,6 +44,12 @@ app.service("dataFromServer", function($http) {
 
                 getMenu: function() {
                     return $http.get("/menu").then(function(res) {
+                        return res;
+                    });
+                },
+
+                postOrder: function(order) {
+                    return $http.post("/order", order).then(function(res) {                        
                         return res;
                     });
                 }

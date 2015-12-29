@@ -4,20 +4,20 @@
         <ul>
             <li ng-repeat = "position in menu">
             <p>{{position.name}}</p>
-            <p>{{position.ingredients}}</p>
+            <p><a ng-repeat = "ingredient in position.ingredients track by $index">{{ingredient}} </a></p>
             <p>{{position.price}}</p>
-            <input type="number" min="1" ng-model="position.count"/>
-            <button id="{{position.id}}" ng-click="addPizzaToOrder(position.name, position.count, position.price)">Add to basket</button>
+            <input type="number" min="1" ng-model="position.count" placeholder="Amount" />
+            <button id="{{position.id}}" ng-click="addPizzaToOrder(position.id, position.name, position.count, position.price)">Add to basket</button>
             <button ng-click="instantOrder()">Instant order</button>
         </ul>
     </div>
     <div id="basket">
         <h1>Basket</h1>
         <ul>
-            <li ng-repeat = "position in order">
+            <li ng-repeat = "position in basket">
             {{position.name}}, {{position.count}}, {{position.price}}
             <button id="{{position.name}}" ng-click="removePizzaFromOrder(position)">-</button>
-            <button ng-click="">edit</button>
+            <button ng-click="editCount()">edit</button>
         </ul>
         Total: {{total}}
     </div>
