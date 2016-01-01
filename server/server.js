@@ -86,6 +86,7 @@ app.post('/order', function (req, res) {
                 id: i
             });
 
+            console.log(res);
             i++;
         } else {
             res.status(500).send('Invalid order.');

@@ -2,6 +2,7 @@ app.controller("finalizeOrderController",function($scope, $stateParams, $state, 
     $scope.order = $stateParams.order;
     $scope.basket = $stateParams.basket;
     $scope.total = $stateParams.total;
+    _id = null;
 
     $scope.form = {
         phone: null,
@@ -33,8 +34,9 @@ app.controller("finalizeOrderController",function($scope, $stateParams, $state, 
                 $scope.postFailed = true;
             }
             else {
-                $state.go("status");
+                $state.go("status", {id : res.data.id});
             }
         });
     };
+
 });

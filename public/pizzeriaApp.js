@@ -23,9 +23,12 @@ var app = angular.module('PizzeriaApp', ['ui.router']).config(function ($statePr
             }
         })
         .state('status', {
-            url: "/order/:orderid",
+            url: "/order/:id",
             templateUrl: "public/orderStatus.html",
-            controller: "orderStatusController"
+            controller: "orderStatusController",
+            params: {
+                id : null
+            }
         });
 });
 
@@ -50,6 +53,12 @@ app.service("dataFromServer", function($http) {
 
                 postOrder: function(order) {
                     return $http.post("/order", order).then(function(res) {                        
+                        return res;
+                    });
+                },
+        
+                getOrder: function(id) {
+                    return $http.get("/order/" + id).then(function(res) {
                         return res;
                     });
                 }
