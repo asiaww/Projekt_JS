@@ -31,7 +31,7 @@ app.controller("mainController", function($scope, $http, $state, dataFromServer)
                     id: id,
                     name: name,            
                     count: count,
-                    price: price  
+                    price: price.toFixed(2)  
                 };
                 var orderPosition = {
                     id: id,
@@ -50,10 +50,6 @@ app.controller("mainController", function($scope, $http, $state, dataFromServer)
         $scope.order.splice(index, 1); 
         $scope.sumTotal();
     };
-
-    $scope.editCount = function() {
-        return true;
-    }
 
     $scope.sumTotal = function() {
         $scope.total = 0;    

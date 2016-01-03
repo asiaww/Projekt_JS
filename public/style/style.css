@@ -12,7 +12,6 @@ body {
 
 * {
     font-family: 'Open-Sans', sans-serif;
-    /*box-shadow:inset 0px 0px 0px 1px red;*/
 }
 
 ul {
@@ -70,7 +69,6 @@ h1 {
     padding-bottom: 0px;
     padding-top: 0px;
     font-family: 'Open Sans', sans-serif; 
-    font-size: 20px; 
     font-weight: 300; 
     line-height: 20px;
 }
@@ -132,16 +130,19 @@ h1 {
     color: white;
 }
 
-.basket ul li .buttongroup {
-    /*margin-right: 20px;*/
-    /*float: right;*/
-    padding-bottom: 20px;
+.basket ul li input {
+    width: 40px;
+    margin-left: 10px;
+    color: #3B3D37;
+    border: 2px #FF9911 solid;
 }
 
-.basket ul li .buttongroup button {
+.basket ul li button {
     color: #fff;
     background-color: #FF9911;
-    border: 2px #FF9911 solid; 
+    border: 2px #FF9911 solid;
+    float: right;
+    margin-right: 40px; 
 }
 
 .basket .continue {

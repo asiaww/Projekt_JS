@@ -32,10 +32,6 @@ var app = angular.module('PizzeriaApp', ['ui.router']).config(function ($statePr
         });
 });
 
-//app.config(["$locationProvider", function ($locationProvider) {
-//    $locationProvider.html5Mode(true);
-//}]);
-
 app.service("dataFromServer", function($http) {
     
     return {
