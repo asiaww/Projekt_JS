@@ -1,9 +1,8 @@
-<div id="contactPage" ng-controller="contactController" data-ng-init="getContact()">
-    <h1>Contact</h1>    
-    <p>Name: {{ contact.name }}</p><br />
-    <p>Address</p>
-    <p>Street: {{ contact.address.street }}</p>
-    <p>City: {{ contact.address.city }}</p><br />
-    <p>Phone: {{ contact.phone }}</p>
-    <p>Hours: {{ contact.hours }}</p>
+<div class="contact" ng-controller="contactController" data-ng-init="getContact()">
+    <h1>Kontakt</h1>    
+    <h2>Nazwa <span>{{ contact.name }}</span></h2>
+    <h2>Ulica <span>{{ contact.address.street }}</span></h2>
+    <h2>Miasto <span>{{ contact.address.city }}</span></h2>
+    <h2>Telefon <span>{{ contact.phone }}</span></h2>
+    <h2>Godziny <span>{{ contact.hours }}</span></h2>
 </div>

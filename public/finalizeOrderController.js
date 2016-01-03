@@ -2,7 +2,6 @@ app.controller("finalizeOrderController",function($scope, $stateParams, $state, 
     $scope.order = $stateParams.order;
     $scope.basket = $stateParams.basket;
     $scope.total = $stateParams.total;
-    _id = null;
 
     $scope.form = {
         phone: null,
@@ -16,7 +15,7 @@ app.controller("finalizeOrderController",function($scope, $stateParams, $state, 
     $scope.phoneNumberValidation = function() {
         var phone = $scope.form.phone;
         var regex = /[0-9]{9}/;
-        if (!regex.test(phone)) {
+        if (!regex.test(phone)){
             $scope.validOrder = false;
         }
         else {

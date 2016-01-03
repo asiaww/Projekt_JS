@@ -1,25 +1,33 @@
-<div id="mainPage" ng-controller="mainController">
-    <div id="menu">
-        <h1>Menu</h1>        
+<div class="main_page" ng-controller="mainController">
+    <div class="menu">        
         <ul>
             <li ng-repeat = "position in menu">
             <p>{{position.name}}</p>
-            <p><a ng-repeat = "ingredient in position.ingredients track by $index">{{ingredient}} </a></p>
-            <p>{{position.price}}</p>
-            <input type="number" min="1" ng-model="position.count" placeholder="Amount" />
-            <button id="{{position.id}}" ng-click="addPizzaToOrder(position.id, position.name, position.count, position.price)">Add to basket</button>
-            <button ng-click="instantOrder()">Instant order</button>
+            <p><span ng-repeat = "ingredient in position.ingredients track by $index">{{ingredient}} </span></p>
+            <p>{{position.price.toFixed(2)}} zł</p>
+            <div class="container">           
+                <p class="amount">Ilość:<input type="number" min="1" ng-model="position.count" /></p>
+                <div class="buttongroup">
+                    <button ng-click="addPizzaToOrder(position.id, position.name, position.count, position.price)">Do koszyka</button>
+                    <button ng-click="instantOrder()">Zamów teraz!</button>
+                </div>
+            </div>        
         </ul>
     </div>
-    <div id="basket">
-        <h1>Basket</h1>
-        <ul>
-            <li ng-repeat = "position in basket">
-            {{position.name}}, {{position.count}}, {{position.price}}
-            <button id="{{position.name}}" ng-click="removePizzaFromOrder(position)">-</button>
-            <button ng-click="editCount()">edit</button>
-        </ul>
-        Total: {{total}}
+    <div class="scroll">
+        <div class="basket">
+            <h1>Basket</h1>
+            <ul>
+                <li ng-repeat = "position in basket">
+                <p>{{position.count}}x {{position.name}} - {{position.price}} zł                
+                    <div class="buttongroup">
+                        <button id="{{position.name}}" ng-click="removePizzaFromOrder(position)">Usuń</button>
+                        <button ng-click="editCount()">Edytuj</button>
+                    </div>
+                </p>
+            </ul>
+            <p>Suma: {{total}} zł</p>
+            <button class="continue" ng-click=goToFinalizeOrder()>Dalej</button>
+         </div>
     </div>
-    <button ng-click=goToFinalizeOrder()>Continue</button>
 </div>

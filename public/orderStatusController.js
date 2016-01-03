@@ -4,14 +4,11 @@ app.controller("orderStatusController", function($scope, $http, $stateParams, da
     
     $scope.getOrder = function(id) {
         dataFromServer.getOrder(id).then(function(res) {
-                console.log(res.data);
                 $scope.order = {
                     id: res.data.id,
-                    estimated: res.data.estimated
+                    estimated: res.data.estimated.substring(11,16)
                 };
             
-                console.log($scope.order.estimated);
-
             });
 
     };
