@@ -1,10 +1,8 @@
 {
-  "name": "Angular mail client",
+  "name": "PizzeriaApp",
   "version": "0.0.0",
-  "homepage": "https://github.com/sebagradys/Project-JS",
-  "authors": [
-    "Seba Gradys <seba.gradys@gmail.com>"
-  ],
+  "homepage": "https://github.com/asiaww/Projekt_JS",
+  "authors": [],
   "description": "",
   "main": "",
   "moduleType": [],
