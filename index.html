@@ -5,21 +5,18 @@
     <title>Pizzeria</title>
     <meta charset="utf-8"/>
     <meta author="Joanna Wetesko"/>
-	
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="public/pizzeriaApp.js"></script>
 
-    <script src="public/mainController.js"></script>
-    <script src="public/contactController.js"></script>
-    <script src="public/finalizeOrderController.js"></script>
-    <script src="public/orderStatusController.js"></script>
+    <link type="text/css" rel="stylesheet" href="public/style/style.css"/>
+	
+    <!-- inject:js -->
+    <!-- endinject -->
+    
 </head>
 
 <body>
-    <nav>
-	<a ui-sref="main">Main page</a>
-	<a ui-sref="contact">Contact</a>
+    <nav class="main_menu">
+        <a ui-sref="main">Strona główna</a>
+	    <a ui-sref="contact">Kontakt</a>
     </nav>
     <div ui-view></div>    
 </body>

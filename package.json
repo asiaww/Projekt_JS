@@ -1,15 +1,24 @@
 {
-  "name": "EmailClient",
-  "version": "0.0.0",
-  "description": "",
-  "main": "server/server.js",
-  "dependencies": {},
-  "devDependencies": {
-    "grunt": "~0.4.5"
-  },
+  "name": "PizzeriaApp",
+  "version": "1.0.0",
+  "description": "Pizzeria",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Joanna Wetesko",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "",
+    "gulp": "",
+    "gulp-concat": "",
+    "gulp-inject": "",
+    "gulp-minify-css": "",
+    "gulp-minify-html": "",
+    "gulp-uglify": "",
+    "jshint": "",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "lodash": "^3.10.1"
+  }
 }

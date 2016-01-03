@@ -2,7 +2,9 @@
   "name": "PizzeriaApp",
   "version": "0.0.0",
   "homepage": "https://github.com/asiaww/Projekt_JS",
-  "authors": [],
+  "authors": [
+    "Joanna Wetesko"
+  ],
   "description": "",
   "main": "",
   "moduleType": [],
