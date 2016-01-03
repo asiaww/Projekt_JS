@@ -16,7 +16,7 @@
     </div>
     <div class="scroll">
         <div class="basket">
-            <h1>Basket</h1>
+            <h1>Koszyk</h1>
             <ul>
                 <li ng-repeat = "position in basket">
                 <p><input type="number" min="1" ng-model="position.count" ng-change=sumTotal() placeholder="{{position.count}}" /> {{position.name}} - {{position.price}} zł <button id="{{position.name}}" ng-click="removePizzaFromOrder(position)">Usuń</button></p>
