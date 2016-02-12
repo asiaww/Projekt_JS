@@ -112,13 +112,80 @@ h1 {
     background-color: #FF9911;
 }
 
+/*-------------------------------------------------------------POPUP--------------------------------------------------------------------*/
+.popUp {
+    display: inline-block;
+    border: solid 1px #3B3D37;
+    float: right;
+    width: 1100px;
+    height: 400px;
+    margin-top: 0px;
+    background: linear-gradient(to right, #645F57, #3B3D37);
+    color: white;
+    transition: opacity 500ms;
+    margin-top:130px;
+}
+.popUp h2 {
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 24px; 
+    font-weight: 300; 
+    line-height: 24px;
+    padding-left: 30px;
+}
+
+.popUp h3 {
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 18px; 
+    font-weight: 300; 
+    line-height: 18px;
+    padding-left: 30px;
+}
+.popUp ul li {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.popUp button {
+    color: #fff;
+    background-color: #FF9911;
+    border: 2px #FF9911 solid;
+    float: right;
+    margin-right: 40px;
+    margin-top: 10px;
+}
+
+.popUpExtras {
+    display: inline-block;
+    border: solid 1px #3B3D37;
+    float: left;
+    width: 600px;
+    height: 350px;
+    margin-left: 350px;
+    background: linear-gradient(to right, #645F57, #3B3D37);
+    color: white;
+    transition: opacity 500ms;
+    margin-top: 70px;
+}
+
+.popUpExtras button {
+    color: #fff;
+    background-color: #FF9911;
+    border: 2px #FF9911 solid;
+    float: right;
+    margin-right: 40px;
+    margin-top: 10px;
+}
+
+.popUpExtras ul li {
+    padding-top: 10px;
+}
 
 /*-------------------------------------------------------------BASKET-------------------------------------------------------------------*/
 .scroll {
     display: inline-block;
     position: fixed;
     width: 600px;
-    
 }
 
 .basket {
@@ -271,7 +338,7 @@ h1 {
 .finalize_order > .buttongroup {
     display: inline-block;    
     margin-top: 50px;
-    margin-left: 530px; 
+    margin-left: 530px;
 }
 
 .finalize_order > .buttongroup button {
@@ -294,6 +361,12 @@ h1 {
     border: 2px lightgrey solid;
     background-color: white;
 }
+
+.extras {
+
+}
+
+
 
 /*-------------------------------------------------------------STATUS-------------------------------------------------------------------*/
 
@@ -322,7 +395,7 @@ h1 {
     font-family: 'Open Sans', sans-serif; 
     font-size: 50px; 
     font-weight: 300; 
-    line-height: 20px;
+    line-height: 50px;
     color: #FF9911; 
     text-align: center;
 }

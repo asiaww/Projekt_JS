@@ -47,6 +47,18 @@ app.service("dataFromServer", function($http) {
                     });
                 },
 
+                getIngredients: function() {
+                    return $http.get("/ingredients").then(function(res) {
+                        return res;
+                    });
+                },
+
+                getExtras: function() {
+                    return $http.get("/extras").then(function(res) {
+                        return res;
+                    });
+                },
+
                 postOrder: function(order) {
                     return $http.post("/order", order).then(function(res) {                        
                         return res;
@@ -59,4 +71,10 @@ app.service("dataFromServer", function($http) {
                     });
                 }
     };               
+});
+
+app.filter('showIngredientsNames', function () {
+        return function (pizza, ingredient) {
+            return pizza.basicIngredients.indexOf(ingredient.id) > -1 ? true : false;
+        };
 });
